@@ -53,6 +53,7 @@
     @keyframes bounce{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
     .pixel-gallery img{max-width:120px;height:auto;margin:6px;border-radius:8px;border:1px solid rgba(0,0,0,0.06)}
     .medal-badge{max-width:80px}
+    .poke-image{max-height:240px}
     footer{padding:18px 0;text-align:center;color:#555}
     @media (max-width:576px){.pokeball{width:64px;height:64px}}
   </style>
@@ -240,8 +241,8 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body d-flex gap-4 flex-column flex-md-row">
-          <div style="min-width:220px;text-align:center">
-            <img id="pokeImage" src="" alt="" class="img-fluid" style="max-height:240px;">
+            <img id="pokeImage" src="" alt="" class="img-fluid poke-image">
+            <img id="pokeImage" src="" alt="" class="img-fluid poke-image-modal">
             <div class="mt-2 text-muted" id="pokeNumber"></div>
           </div>
           <div>
@@ -437,10 +438,10 @@ renderSeasonsBlocks();
             const img = document.createElement('img');
             img.src = d.sprites.front_default || (d.sprites.other && d.sprites.other['official-artwork'] && d.sprites.other['official-artwork'].front_default) || '';
             img.alt = name;
-            img.style.width='60%'; img.style.position='relative'; img.style.zIndex='2'; img.style.pointerEvents='none';
+            img.className = 'poke-image-img';
             el.appendChild(img);
             const num = document.createElement('div');
-            num.style.position='absolute'; num.style.bottom='6px'; num.style.right='6px'; num.style.fontSize='11px'; num.style.color='#222'; num.style.background='rgba(255,255,255,0.8)'; num.style.padding='2px 6px'; num.style.borderRadius='12px';
+            num.className = 'poke-image-number';
             num.textContent = `#${d.id}`;
             el.appendChild(num);
           });
