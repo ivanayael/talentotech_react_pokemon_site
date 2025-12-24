@@ -54,6 +54,7 @@
     .pixel-gallery img{max-width:120px;height:auto;margin:6px;border-radius:8px;border:1px solid rgba(0,0,0,0.06)}
     .medal-badge{max-width:80px}
     .poke-image{max-height:240px}
+    .poke-modal-image-container{min-width:220px;text-align:center}
     footer{padding:18px 0;text-align:center;color:#555}
     @media (max-width:576px){.pokeball{width:64px;height:64px}}
   </style>
@@ -241,10 +242,10 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
           <div class="modal-body d-flex gap-4 flex-column flex-md-row">
-          <div style="min-width:220px;text-align:center">
-            <img id="pokeImage" src="" alt="" class="img-fluid" style="max-height:240px;">
-            <div class="mt-2 text-muted" id="pokeNumber"></div>
-          </div>
+            <div class="poke-modal-image-container">
+              <img id="pokeImage" src="" alt="" class="img-fluid poke-image">
+              <div class="mt-2 text-muted" id="pokeNumber"></div>
+            </div>
           <div>
             <h6>Descripción</h6>
             <p id="pokeDesc">Cargando descripción...</p>
